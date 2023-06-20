@@ -1,8 +1,8 @@
 <?php
-include __DIR__ . '/models/products.php';
-include __DIR__ . '/models/foods.php';
-include __DIR__ . '/models/games.php';
-include __DIR__ . '/models/kennels.php';
+include __DIR__ . '/models/product.php';
+include __DIR__ . '/models/food.php';
+include __DIR__ . '/models/game.php';
+include __DIR__ . '/models/kennel.php';
 include __DIR__ . '/data.php';
 
 ?>
@@ -22,11 +22,9 @@ include __DIR__ . '/data.php';
 </head>
 
 <body>
-    <ul>
-        <li>
-
-        </li>
-    </ul>
+    <div class="container">
+        
+    </div>
 </body>
 
 </html>
