@@ -1,5 +1,6 @@
 <?php
-
+include __DIR__ . '/models/products.php';
+include __DIR__ . '/data.php'
 
 ?>
 
@@ -18,6 +19,10 @@
     crossorigin="anonymous" defer></script>
 </head>
 <body>
-    
+    <ul>
+        <li>
+            
+        </li>
+    </ul>
 </body>
 </html>
