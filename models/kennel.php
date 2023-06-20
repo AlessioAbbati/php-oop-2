@@ -2,7 +2,7 @@
 
 class kennel extends product {
     public function __construct(
-        public string $material,
+        public array $material,
         public string $dimension,
         public string $type,
     )

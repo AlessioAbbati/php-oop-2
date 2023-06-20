@@ -5,7 +5,7 @@ class food extends product {
         public string $weight,
         public string $type,
         public int $age,
-        public string $taste,
+        public array $taste,
     )
     {
         
