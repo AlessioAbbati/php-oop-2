@@ -1,16 +1,20 @@
 <?php
 
-class product {
+class product
+{
 
     public function __construct(
-        public string $category, 
-        private int $price, 
-        public string $img, 
+        public string $image,
         public string $name,
         public string $description,
-        public string $availability,
-        )
+        public string $availabiliy,
+        public int $price,
+        public string $weight,
+        public string $type,
+        public string $age,
+        public array $category,
+    ) 
     {
-        
+
     }
 }
