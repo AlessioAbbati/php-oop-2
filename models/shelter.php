@@ -9,9 +9,9 @@ class Shelter extends Product {
 		int $price, // il prezzo in centesimi
 		Category $category,
 		string $image,
-		protected int $height, // lunghesse in mm
-		protected int $width, // lunghesse in mm
-		protected int $length, // lunghesse in mm
+		protected int $height, 
+		protected int $width, 
+		protected int $length, 
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
 	}
