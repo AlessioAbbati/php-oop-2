@@ -5,6 +5,17 @@ $arrCategory = [
     new category('cat'),
 ];
 
+$arrTaste = [
+    new taste('chicken'),
+    new taste('pork'),
+    new taste('salmon'),
+    new taste('tuna'),
+    new taste('shrimp'),
+    new taste('lamb'),
+    new taste('beef'),
+    new taste('rabbit'),
+];
+
 $products = [
     [
         'image' => 'food1.jpg',
@@ -16,6 +27,7 @@ $products = [
         'type' => 'Dry',
         'age' => 'Adult',
         'category' => [0],
+        'taste' => [0, 1, 6],
     ],
     [
         'image' => 'food2.jpg',
@@ -27,6 +39,7 @@ $products = [
         'type' => 'Wet',
         'age' => 'Kitten',
         'category' => [1],
+        'taste' => [2, 3, 4],
     ],
     // [
     //     'image' => 'game1.jpg',
@@ -76,6 +89,10 @@ foreach ($products as $product) {
     foreach ($product['category'] as $index) {
         $arrCategories[] = $arrCategory[$index];
     }
+    $arrTastes = [];
+    foreach ($product['taste'] as $index) {
+        $arrTastes[] = $arrTaste[$index];
+    }
 
     $arrProduct [] = new product(
         $product['image'],
@@ -87,6 +104,7 @@ foreach ($products as $product) {
         $product['type'],
         $product['age'],
         $product['category'],
+        $product['taste'],
     );
 }
 

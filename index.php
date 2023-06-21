@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . '/models/product.php';
 include __DIR__ . '/models/category.php';
+include __DIR__ . '/models/taste.php';
 include __DIR__ . '/data.php';
 
 ?>

@@ -13,6 +13,7 @@ class product
         public string $type,
         public string $age,
         public array $category,
+        public array $taste,
     ) 
     {
 
