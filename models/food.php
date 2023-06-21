@@ -1,6 +1,6 @@
 <?php
 
-class product
+class food
 {
 
     public function __construct(

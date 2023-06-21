@@ -16,7 +16,7 @@ $arrTaste = [
     new taste('rabbit'),
 ];
 
-$products = [
+$foods = [
     [
         'image' => 'food1.jpg',
         'name' => 'Dog Food 1',
@@ -79,33 +79,34 @@ $products = [
     //     'price' => 100,
     //     'dimension' => 'Small',
     //     'type' => 'Indoor',
+    //     'category' => [1],
     // ],
 
 ];
 
-$arrProduct = [];
-foreach ($products as $product) {
+$arrFood = [];
+foreach ($foods as $food) {
     $arrCategories = [];
-    foreach ($product['category'] as $index) {
+    foreach ($food['category'] as $index) {
         $arrCategories[] = $arrCategory[$index];
     }
     $arrTastes = [];
-    foreach ($product['taste'] as $index) {
+    foreach ($food['taste'] as $index) {
         $arrTastes[] = $arrTaste[$index];
     }
 
-    $arrProduct [] = new product(
-        $product['image'],
-        $product['name'],
-        $product['description'],
-        $product['availability'],
-        $product['price'],
-        $product['weight'],
-        $product['type'],
-        $product['age'],
-        $product['category'],
-        $product['taste'],
+    $arrFood [] = new food(
+        $food['image'],
+        $food['name'],
+        $food['description'],
+        $food['availability'],
+        $food['price'],
+        $food['weight'],
+        $food['type'],
+        $food['age'],
+        $food['category'],
+        $food['taste'],
     );
 }
 
-var_dump($arrProduct);
+var_dump($arrFood);
