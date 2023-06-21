@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__ . '/product.php';
 
-class Food extends Product {
+class Toy extends Product {
 	public function __construct(
 		int $id,
 		string $name,
@@ -9,15 +9,15 @@ class Food extends Product {
 		int $price, // il prezzo in centesimi
 		Category $category,
 		string $image,
-		protected string $expiry,
-		protected int $weight, // peso in grammi
+		protected string $material,
+		protected string $color,
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
 	}
 
 	public function printCard() {
-		// ritorna il codice html della card da mostrare in pagina
 		$type = get_class($this);
+		// ritorna il codice html della card da mostrare in pagina
 		return "
 			<div class=\"col\">
 				<div class=\"card h-100\">
@@ -29,8 +29,8 @@ class Food extends Product {
 					<ul class=\"list-group list-group-flush\">
 						<li class=\"list-group-item\">Type: {$type}</li>
 						<li class=\"list-group-item\">Category: {$this->category->getName()}</li>
-						<li class=\"list-group-item\">Peso: {$this->weight}</li>
-						<li class=\"list-group-item\">Scadenza: {$this->expiry}</li>
+						<li class=\"list-group-item\">Materiale: {$this->material}</li>
+						<li class=\"list-group-item\">Colore: {$this->color}</li>
 						<li class=\"list-group-item\">Prezzo: {$this->getFormattedPrice()}</li>
 					</ul>
 					<div class=\"card-body\">

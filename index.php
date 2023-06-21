@@ -1,7 +1,8 @@
 <?php
 include __DIR__ . '/models/food.php';
 include __DIR__ . '/models/category.php';
-include __DIR__ . '/models/taste.php';
+include __DIR__ . '/models/toy.php';
+include __DIR__ . '/models/shelter.php';
 include __DIR__ . '/data.php';
 
 ?>
@@ -22,7 +23,10 @@ include __DIR__ . '/data.php';
 
 <body>
     <div class="container">
-        <div class="products">
+        <div class="products"><?php
+			foreach ($arrProducts as $objProduct) {
+				echo $objProduct->printCard();
+			} ?>
 
         </div>
     </div>

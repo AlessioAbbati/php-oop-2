@@ -1,7 +1,7 @@
 <?php
 include_once __DIR__ . '/product.php';
 
-class Food extends Product {
+class Shelter extends Product {
 	public function __construct(
 		int $id,
 		string $name,
@@ -9,8 +9,9 @@ class Food extends Product {
 		int $price, // il prezzo in centesimi
 		Category $category,
 		string $image,
-		protected string $expiry,
-		protected int $weight, // peso in grammi
+		protected int $height, // lunghesse in mm
+		protected int $width, // lunghesse in mm
+		protected int $length, // lunghesse in mm
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
 	}
@@ -29,8 +30,7 @@ class Food extends Product {
 					<ul class=\"list-group list-group-flush\">
 						<li class=\"list-group-item\">Type: {$type}</li>
 						<li class=\"list-group-item\">Category: {$this->category->getName()}</li>
-						<li class=\"list-group-item\">Peso: {$this->weight}</li>
-						<li class=\"list-group-item\">Scadenza: {$this->expiry}</li>
+						<li class=\"list-group-item\">Dimensioni: {$this->width} x {$this->length} x {$this->height} mm</li>
 						<li class=\"list-group-item\">Prezzo: {$this->getFormattedPrice()}</li>
 					</ul>
 					<div class=\"card-body\">
