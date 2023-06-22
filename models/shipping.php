@@ -15,7 +15,7 @@ trait shipping {
         if ($weight > 0) {
             $this->weight = $weight;
         } else {
-            throw new exeption('peso <=0');
+            throw new Exception('peso <=0');
         }
         
         return $this;
