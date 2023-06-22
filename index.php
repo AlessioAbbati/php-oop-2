@@ -3,7 +3,13 @@ include __DIR__ . '/models/food.php';
 include __DIR__ . '/models/category.php';
 include __DIR__ . '/models/toy.php';
 include __DIR__ . '/models/shelter.php';
-include __DIR__ . '/data.php';
+try {
+    include __DIR__ . '/data.php';
+} catch (Exception $e) {
+    die ('il peso non puo essere minore di 0');
+}
+
+
 
 ?>
 

@@ -17,7 +17,7 @@ class Food extends Product {
 		// protected int $weight, // peso in grammi
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
-        $this->weight = $weight;
+        $this->setWeight($weight);
 	}
 
 	public function printCard() {

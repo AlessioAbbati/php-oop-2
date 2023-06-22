@@ -16,7 +16,7 @@ class Toy extends Product {
         int $weight,
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
-	    $this->weight = $weight;
+	    $this->setWeight($weight);
     }
 
 	public function printCard() {

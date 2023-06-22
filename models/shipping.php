@@ -11,8 +11,13 @@ trait shipping {
         return $this->weight;
     }
 
-    public function setWeight() {
-        $this->weight = $weight;
+    public function setWeight($weight) {
+        if ($weight > 0) {
+            $this->weight = $weight;
+        } else {
+            throw new exeption('peso <=0');
+        }
+        
         return $this;
     }
 }
