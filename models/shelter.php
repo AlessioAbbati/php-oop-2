@@ -1,7 +1,9 @@
 <?php
 include_once __DIR__ . '/product.php';
+include_once __DIR__ . '/shipping.php';
 
 class Shelter extends Product {
+    use shipping;
 	public function __construct(
 		int $id,
 		string $name,
@@ -12,9 +14,11 @@ class Shelter extends Product {
 		protected int $height, 
 		protected int $width, 
 		protected int $length, 
+        int $weight,
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
-	}
+	    $this->weight = $weight;
+    }
 
 	public function printCard() {
 		// ritorna il codice html della card da mostrare in pagina
@@ -32,6 +36,7 @@ class Shelter extends Product {
 						<li class=\"list-group-item\">Category: {$this->category->getName()}</li>
 						<li class=\"list-group-item\">Dimensioni: {$this->width} x {$this->length} x {$this->height} mm</li>
 						<li class=\"list-group-item\">Prezzo: {$this->getFormattedPrice()}</li>
+                        <li class=\"list-group-item\">Peso: {$this->weight}</li>
 					</ul>
 					<div class=\"card-body\">
 						<a href=\"#\" class=\"card-link\">Details</a>

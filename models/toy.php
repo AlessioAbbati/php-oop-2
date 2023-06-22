@@ -1,7 +1,9 @@
 <?php
 include_once __DIR__ . '/product.php';
+include_once __DIR__ . '/shipping.php';
 
 class Toy extends Product {
+    use shipping;
 	public function __construct(
 		int $id,
 		string $name,
@@ -11,9 +13,11 @@ class Toy extends Product {
 		string $image,
 		protected string $material,
 		protected string $color,
+        int $weight,
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
-	}
+	    $this->weight = $weight;
+    }
 
 	public function printCard() {
 		$type = get_class($this);
@@ -31,6 +35,7 @@ class Toy extends Product {
 						<li class=\"list-group-item\">Category: {$this->category->getName()}</li>
 						<li class=\"list-group-item\">Materiale: {$this->material}</li>
 						<li class=\"list-group-item\">Colore: {$this->color}</li>
+                        <li class=\"list-group-item\">Peso: {$this->weight}</li>
 						<li class=\"list-group-item\">Prezzo: {$this->getFormattedPrice()}</li>
 					</ul>
 					<div class=\"card-body\">

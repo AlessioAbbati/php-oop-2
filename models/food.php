@@ -1,7 +1,10 @@
 <?php
 include_once __DIR__ . '/product.php';
+include_once __DIR__ . '/shipping.php';
 
 class Food extends Product {
+    use shipping;
+
 	public function __construct(
 		int $id,
 		string $name,
@@ -10,9 +13,11 @@ class Food extends Product {
 		Category $category,
 		string $image,
 		protected string $expiry,
-		protected int $weight, // peso in grammi
+        int $weight
+		// protected int $weight, // peso in grammi
 	) {
 		parent::__construct($id, $name, $description, $price, $category, $image);
+        $this->weight = $weight;
 	}
 
 	public function printCard() {
